@@ -78,7 +78,7 @@ SWEP.DrawCrosshair = true
 SWEP.ViewModel = 'models/weapons/cstrike/c_pist_deagle.mdl'
 SWEP.WorldModel = 'models/weapons/w_pist_deagle.mdl'
 SWEP.Weight = 5
-SWEP.EmitSound = Sound('Weapon_Deagle.Single')
+SWEP.ShootSound = Sound("weapons/357_fire2.wav")
 
 SWEP.IronSightsPos = Vector(-6.361, -3.701, 2.15)
 SWEP.IronSightsAng = Vector(0, 0, 0)
@@ -96,8 +96,6 @@ function SWEP:PrimaryAttack()
 	self:SetNextPrimaryFire(CurTime() + 0.01)	
 	self:ShootBullet(15, 1, 0.1)
 	self:EmitSound(self.ShootSound)
-	self:TakePrimaryAmmo(1)
-
 end
 
 function SWEP:SecondaryAttack()

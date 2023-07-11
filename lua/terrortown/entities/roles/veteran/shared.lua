@@ -9,7 +9,7 @@ end
 
 
 function ROLE:PreInitialize()
-    self.color = Color(29, 33, 13, 255)
+    self.color = Color(63, 86, 52, 255)
 
     self.abbr                       = "vet"
     self.surviveBonus               = 0
@@ -41,13 +41,13 @@ end
 if SERVER then
     -- Give Loadout on respawn and rolechange
     function ROLE:GiveRoleLoadout(ply, isRoleChange)
-        ply:GiveEquipmentWeapon("weapon_ttt2_guncrafter")
+        ply:GiveEquipmentWeapon("weapon_ttt2_vest")
 
     end
 
     -- Remove Loadout on death and rolechange
     function ROLE:RemoveRoleLoadout(ply, isRoleChange)
-        ply:StripWeapon("weapon_ttt2_guncrafter")
+        ply:StripWeapon("weapon_ttt2_vest")
 
     end
 end
