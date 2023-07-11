@@ -1,7 +1,9 @@
 if SERVER then
+
     AddCSLuaFile()
 
-    resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_gunsmith.vmt")
+    resource.AddFile("materials/vgui/ttt/dynamic/roles/gunsmith_icon.vmt")
+
 end
 
 
