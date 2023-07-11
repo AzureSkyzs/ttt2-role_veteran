@@ -2,16 +2,16 @@ if SERVER then
 
     AddCSLuaFile()
 
-    resource.AddFile("materials/vgui/ttt/dynamic/roles/gunsmith_icon.vmt")
+    resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_veteran.vmt")
 
 end
 
 
 
 function ROLE:PreInitialize()
-    self.color = Color(84, 122, 104, 255)
+    self.color = Color(29, 33, 13, 255)
 
-    self.abbr                       = "Gsmith"
+    self.abbr                       = "vet"
     self.surviveBonus               = 0
     self.score.killsMultiplier      = 2
     self.score.teamKillsMultiplier  = -8

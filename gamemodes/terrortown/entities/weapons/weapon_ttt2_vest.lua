@@ -17,11 +17,11 @@ if SERVER then
 
 	resource.AddFile('')
 else
-	hook.Add('Initialize', 'TTTInitGuncrafterLang', function()
-		LANG.AddToLanguage('English', 'ttt2_weapon_guncrafter_desc', 'Left click to open the crafting menu')
+	hook.Add('Initialize', 'TTTInitVestLang', function()
+		LANG.AddToLanguage('English', 'ttt2_weapon_vest_desc', 'Left click to open the crafting menu')
 	end)
 
-	SWEP.PrintName = "Guncrafter"
+	SWEP.PrintName = "Vest"
 	SWEP.Author = "AzureSkys"
 
 	SWEP.Slot = 7
@@ -33,7 +33,7 @@ else
 	SWEP.Icon = ''
 	SWEP.EquipMenuData = {
 		type = 'item_weapon',
-		desc = 'ttt2_weapon_guncrafter_desc'
+		desc = 'ttt2_weapon_vest_desc'
 	}
 end
 
