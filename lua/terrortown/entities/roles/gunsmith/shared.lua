@@ -1,8 +1,10 @@
 if SERVER then
+    AddCSLuaFile()
 
-	AddCSLuaFile()
-
+    resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_gunsmith.vmt")
 end
+
+
 
 function ROLE:PreInitialize()
     self.color = Color(84, 122, 104, 255)
@@ -28,6 +30,20 @@ function ROLE:PreInitialize()
         togglable    = true, -- option to toggle a role for a client if possible (F1 menu)
         random       = 33
     }
+end
+
+if SERVER then
+    -- Give Loadout on respawn and rolechange
+    function ROLE:GiveRoleLoadout(ply, isRoleChange)
+        ply:GiveEquipmentWeapon("weapon_ttt2_guncrafter")
+
+    end
+
+    -- Remove Loadout on death and rolechange
+    function ROLE:RemoveRoleLoadout(ply, isRoleChange)
+        ply:StripWeapon("weapon_ttt2_guncrafter")
+
+    end
 end
 
 function ROLE:Initialize()
