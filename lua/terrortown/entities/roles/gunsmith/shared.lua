@@ -5,7 +5,7 @@ if SERVER then
 end
 
 function ROLE:PreInitialize()
-    self.color = Color(106, 183, 139, 255)
+    self.color = Color(84, 122, 104, 255)
 
     self.abbr                       = "Gsmith"
     self.surviveBonus               = 0
