@@ -16,6 +16,7 @@ if SERVER then
 	AddCSLuaFile()
 
 	resource.AddFile('')
+
 else
 	hook.Add('Initialize', 'TTTInitVestLang', function()
 		LANG.AddToLanguage('English', 'ttt2_weapon_vest_desc', 'Left click to open the crafting menu')
@@ -85,20 +86,40 @@ SWEP.IronSightsAng = Vector(0, 0, 0)
 
 -- Functions for the attacks
 
+local isCooldown = false
+
+local cooldown = 15
+
+local vestActive = false
+
+local vestTimer = 4
+
 function SWEP:PrimaryAttack()
-	if CLIENT then
 	
-		if not self:CanPrimaryAttack() then
-			return
-		end
+	if not self:CanPrimaryAttack() then	return end
+
+	if isCooldown then return end
+
+	vestActive = true
+
+	timer.Simple(vestTimer, function() vestActive = false end)
+
+	while vestActive do
+
+		self:SetNextPrimaryFire(CurTime() + 0.01)	
+		self:ShootBullet(15, 1, 0.1)
+		self:EmitSound(self.ShootSound)
 
 	end
-	self:SetNextPrimaryFire(CurTime() + 0.01)	
-	self:ShootBullet(15, 1, 0.1)
-	self:EmitSound(self.ShootSound)
+	
+
+	isCooldown = true
+
+	timer.Simple(cooldown, function() isCooldown = false end)
+
 end
 
 function SWEP:SecondaryAttack()
-
+	
 end
 	
