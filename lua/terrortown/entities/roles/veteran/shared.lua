@@ -11,7 +11,7 @@ end
 function ROLE:PreInitialize()
     self.color = Color(63, 86, 52, 255)
 
-    self.abbr                       = "vet"
+    self.abbr                       = "veteran"
     self.surviveBonus               = 0
     self.score.killsMultiplier      = 2
     self.score.teamKillsMultiplier  = -8
